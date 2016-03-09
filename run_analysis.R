@@ -60,4 +60,4 @@ var.names <- gsub("[Aa]cc", "Accerleration", var.names)
 summary <- group_by(final, subject, activity)
 summary <- summarise_each(summary, funs(mean))
 
-write.table(summary, "tidy.txt", row.names = T)
+write.table(summary, "tidy.txt", row.names = F)
