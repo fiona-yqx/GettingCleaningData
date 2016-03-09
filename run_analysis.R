@@ -26,11 +26,7 @@ y.train <- read.table("UCI HAR Dataset/train/y_train.txt", header = F)
 
 # 1. Merges the training and the test sets to create one data set.
 X <- rbind(x.train, x.test)
-dim(X)
-# [1] 10299   561
 Y <- rbind(y.train, y.test)
-dim(Y)
-# [1] 10299     1
 subject <- rbind(subject.test, subject.train)
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -48,7 +44,6 @@ var.names <- colnames(final)
 var.names <- gsub("\\(\\)", "", var.names)
 var.names <- gsub("mean", "Mean", var.names)
 var.names <- gsub("std", "StandardDeviation", var.names)
-
 var.names <- gsub("^(t)","Time",var.names)
 var.names <- gsub("^(f)","Frequency",var.names)
 var.names <- gsub("([Gg]ravity)","Gravity",var.names)
